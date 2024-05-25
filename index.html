@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <button id="languageToggle">English</button>
+    <h1 id="title">Calculateur d'âge</h1>
+    <form id="ageForm">
+      <label for="birthdate" id="birthdateLabel">Entrez votre date de naissance :</label>
+      <input type="date" id="birthdate" required>
+      <label for="birthtime" id="birthtimeLabel">Entrez votre heure de naissance :</label>
+      <input type="time" id="birthtime" step="1" required>
+      <fieldset>
+        <legend id="optionsLegend">Sélectionnez les options d'affichage de l'âge :</legend>
+        <label><input type="checkbox" id="principale" checked> Âge principal</label>
+        <label><input type="checkbox" id="decennies"> Décennies</label>
+        <label><input type="checkbox" id="annees"> Années</label>
+        <label><input type="checkbox" id="mois"> Mois</label>
+        <label><input type="checkbox" id="jours"> Jours</label>
+        <label><input type="checkbox" id="heures"> Heures</label>
+        <label><input type="checkbox" id="minutes"> Minutes</label>
+        <label><input type="checkbox" id="secondes"> Secondes</label>
+      </fieldset>
+      <button type="submit" id="calculateButton">Calculer</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

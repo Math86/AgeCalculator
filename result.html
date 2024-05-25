@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Result</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url('background.jpg'); /* Chemin vers votre image */
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8); /* Légère transparence pour rendre le texte lisible */
+      padding: 34px; /* Réduire légèrement le padding */
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 1020px; /* Réduire la largeur maximale d'environ 15% */
+      width: 85%; /* Réduire légèrement la largeur */
+    }
+    #ageOutput {
+      font-size: 20px; /* Réduire légèrement la taille de la police */
+      font-weight: bold; /* Mettre le texte en gras */
+      margin-top: 20px;
+      white-space: pre-line; /* Permet de conserver les sauts de ligne */
+      line-height: 2; /* Ajuster la hauteur de ligne pour plus d'espacement */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="results">
+      <p id="ageOutput"></p>
+    </div>
+  </div>
+  <script src="result.js"></script>
+</body>
+</html>
