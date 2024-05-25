@@ -1,3 +1,7 @@
+function formatNumber(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
 function calculateAge(birthDateTime, now) {
   let years = now.getFullYear() - birthDateTime.getFullYear();
   let months = now.getMonth() - birthDateTime.getMonth();
@@ -37,28 +41,28 @@ function displayResults() {
 
   const results = [];
   if (JSON.parse(localStorage.getItem('principale'))) {
-    results.push(`${ageData.years} years, ${ageData.months} months, ${ageData.days} days, ${ageData.hours} hours, ${ageData.minutes} minutes, ${ageData.seconds} seconds`);
+    results.push(`${formatNumber(ageData.years)} years, ${formatNumber(ageData.months)} months, ${formatNumber(ageData.days)} days, ${formatNumber(ageData.hours)} hours, ${formatNumber(ageData.minutes)} minutes, ${formatNumber(ageData.seconds)} seconds`);
   }
   if (JSON.parse(localStorage.getItem('decennies'))) {
-    results.push(`${Math.floor(ageData.years / 10)} decades`);
+    results.push(`${formatNumber(Math.floor(ageData.years / 10))} decades`);
   }
   if (JSON.parse(localStorage.getItem('annees'))) {
-    results.push(`${ageData.years} years`);
+    results.push(`${formatNumber(ageData.years)} years`);
   }
   if (JSON.parse(localStorage.getItem('mois'))) {
-    results.push(`${ageData.years * 12 + ageData.months} months`);
+    results.push(`${formatNumber(ageData.years * 12 + ageData.months)} months`);
   }
   if (JSON.parse(localStorage.getItem('jours'))) {
-    results.push(`${Math.floor((now - birthDateTime) / (1000 * 60 * 60 * 24))} days`);
+    results.push(`${formatNumber(Math.floor((now - birthDateTime) / (1000 * 60 * 60 * 24)))} days`);
   }
   if (JSON.parse(localStorage.getItem('heures'))) {
-    results.push(`${Math.floor((now - birthDateTime) / (1000 * 60 * 60))} hours`);
+    results.push(`${formatNumber(Math.floor((now - birthDateTime) / (1000 * 60 * 60)))} hours`);
   }
   if (JSON.parse(localStorage.getItem('minutes'))) {
-    results.push(`${Math.floor((now - birthDateTime) / (1000 * 60))} minutes`);
+    results.push(`${formatNumber(Math.floor((now - birthDateTime) / (1000 * 60)))} minutes`);
   }
   if (JSON.parse(localStorage.getItem('secondes'))) {
-    results.push(`${Math.floor((now - birthDateTime) / 1000)} seconds`);
+    results.push(`${formatNumber(Math.floor((now - birthDateTime) / 1000))} seconds`);
   }
 
   const lang = localStorage.getItem('language') || 'fr';

@@ -68,7 +68,7 @@ document.getElementById('languageToggle').addEventListener('click', function() {
   }
 });
 
-// Load language preference if available
+// Load language preference if available and set default date and time
 document.addEventListener('DOMContentLoaded', () => {
   const lang = localStorage.getItem('language') || 'fr';
   document.documentElement.lang = lang;
@@ -104,4 +104,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('calculateButton').textContent = 'Calculer';
     document.getElementById('languageToggle').textContent = 'English';
   }
+
+  // Set default date and time
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+  const dd = String(today.getDate()).padStart(2, '0');
+  const formattedToday = `${yyyy}-${mm}-${dd}`;
+  document.getElementById('birthdate').value = formattedToday;
+  document.getElementById('birthtime').value = '00:00:00';
 });
